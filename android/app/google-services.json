@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "362123685694",
+    "project_id": "bloodcheeck",
+    "storage_bucket": "bloodcheeck.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362123685694:android:a733beab2ea95154d6066f",
+        "android_client_info": {
+          "package_name": "com.example.booldcheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362123685694-9u348lq8vg4pm08cprghttpul8h3jqf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYD2UR3JbYbvdbW0-nFqlBlpZPnIBGsAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362123685694-9u348lq8vg4pm08cprghttpul8h3jqf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
