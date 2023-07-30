@@ -11,135 +11,126 @@ class InfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBlueColor,
-      body: Stack(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 180,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/img-bg1.png'),
+      backgroundColor: kWhiteColor,
+      body: SafeArea(
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 30,
               ),
-            ),
-          ),
-          SafeArea(
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "INFO",
-                        style: whiteTextStyle.copyWith(
-                          fontWeight: semiBold,
-                          fontSize: 32,
-                        ),
-                      ),
-                      Container(
-                        width: 74,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage('assets/img-logo.png'),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 100,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DetailInfoPage(
-                            data: dataInfoGula[0],
-                          ),
-                        ),
-                      );
-                    },
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(
-                          10.0), // You can adjust the value as needed
-                      child: Column(
-                        children: [
-                          Text(
-                            dataInfoGula[0].data1,
-                            style: blackTextStyle.copyWith(
-                                fontSize: 24, fontWeight: semiBold),
-                          ),
-                          Text(
-                            dataInfoGula[0].data4,
-                            style: blackTextStyle.copyWith(
-                                fontSize: 24, fontWeight: semiBold),
-                          ),
-                        ],
+                  Container(
+                    width: 85,
+                    height: 90,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/img-info.png'),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DetailInfoPage(
-                            data: dataInfoGula[1],
-                          ),
-                        ),
-                      );
-                    },
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(
-                          10.0), // You can adjust the value as needed
-                      child: Column(
-                        children: [
-                          Text(
-                            dataInfoGula[1].data1,
-                            style: blackTextStyle.copyWith(
-                                fontSize: 24, fontWeight: semiBold),
-                          ),
-                          Text(
-                            dataInfoGula[1].data4,
-                            style: blackTextStyle.copyWith(
-                                fontSize: 24, fontWeight: semiBold),
-                          ),
-                        ],
-                      ),
+                  SizedBox(width: 30,),
+                  Text(
+                    "Informasi  Makanan\nSesuai Standar Gula\nDarah",
+                    style: blackTextStyle.copyWith(
+                      fontWeight: medium,
+                      fontSize: 20,
                     ),
                   ),
                 ],
               ),
-            ),
+              SizedBox(
+                height: 100,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailInfoPage(
+                        data: dataInfoGula[0],
+                      ),
+                    ),
+                  );
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                      Color(0xffFB0000).withOpacity(0.4)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(
+                      10.0), // You can adjust the value as needed
+                  child: Column(
+                    children: [
+                      Text(
+                        dataInfoGula[0].data1,
+                        style: blackTextStyle.copyWith(
+                            fontSize: 24, fontWeight: semiBold),
+                      ),
+                      Text(
+                        dataInfoGula[0].data4,
+                        style: blackTextStyle.copyWith(
+                            fontSize: 24, fontWeight: semiBold),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailInfoPage(
+                        data: dataInfoGula[1],
+                      ),
+                    ),
+                  );
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    Color(0xff5617A7).withOpacity(0.5),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(
+                      10.0), // You can adjust the value as needed
+                  child: Column(
+                    children: [
+                      Text(
+                        dataInfoGula[1].data1,
+                        style: blackTextStyle.copyWith(
+                            fontSize: 24, fontWeight: semiBold),
+                      ),
+                      Text(
+                        dataInfoGula[1].data4,
+                        style: blackTextStyle.copyWith(
+                            fontSize: 24, fontWeight: semiBold),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

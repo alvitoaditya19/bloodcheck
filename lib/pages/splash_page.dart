@@ -17,145 +17,181 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double padding = 115;
     return Scaffold(
-      backgroundColor: kBlueColor,
-      body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: 220,
-                width: 220,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      'assets/img-rs.png',
-                    ),
-                  ),
-                ),
-              ),
-              Text(
-                'Blood Sugar',
-                style: whiteTextStyle.copyWith(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              SizedBox(
-                child: StreamBuilder<DatabaseEvent>(
-                  stream: firebaseService.getDataStream(),
-                  builder: (BuildContext context,
-                      AsyncSnapshot<DatabaseEvent> snapshot) {
-                    if (snapshot.hasData && snapshot.data != null) {
-                      // Process the data
-                      dataDariFirebase =
-                          snapshot.data!.snapshot.value.toString();
-                    }
-                    return Text(
-                      '$dataDariFirebase mg/dL',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    );
-                  },
-                ),
-              ),
+      backgroundColor: kWhiteColor,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      context.read<PageBloc>().add(GoToRecentPage());
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 14,
-                        vertical: 14,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff2034E3),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            'Recent',
-                            style: whiteTextStyle.copyWith(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            height: 58,
-                            width: 90,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  'assets/img-para.png',
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                  height: 20,
+                ),
+                Center(
+                  child: Text(
+                    'Gula Darah',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      context.read<PageBloc>().add(GoToInformasiPage());
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 14,
-                        vertical: 14,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff2034E3),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(
-                            'Informasi',
-                            style: whiteTextStyle.copyWith(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            height: 58,
-                            width: 90,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  'assets/img-info.png',
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 280,
+                  margin: EdgeInsets.symmetric(horizontal: 24),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Color(0xffF40808).withOpacity(0.21),
+                      width: 10,
                     ),
                   ),
-                ],
-              ),
-            ],
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      SizedBox(
+                        child: StreamBuilder<DatabaseEvent>(
+                          stream: firebaseService.getDataStream(),
+                          builder: (BuildContext context,
+                              AsyncSnapshot<DatabaseEvent> snapshot) {
+                            if (snapshot.hasData && snapshot.data != null) {
+                              // Process the data
+                              dataDariFirebase =
+                                  snapshot.data!.snapshot.value.toString();
+                            }
+                            return Text(
+                              '$dataDariFirebase mg/dL',
+                              style: blackTextStyle.copyWith(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        context.read<PageBloc>().add(GoToRecentPage());
+                      },
+                      child: Expanded(
+                        child: Container(
+                          width: screenWidth - (2 * padding),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 14,
+                          ),
+                          decoration: BoxDecoration(
+                              color: Color(0xffC1C1C1),
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 60,
+                                width: 40,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      'assets/img-health.png',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                    color: kWhiteColor,
+                                    borderRadius: BorderRadius.circular(12)),
+                                child: Text(
+                                  'Nilai\nStandar',
+                                  style: blackTextStyle.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        context.read<PageBloc>().add(GoToInformasiPage());
+                      },
+                      child: Expanded(
+                        child: Container(
+                          width: screenWidth - (2 * padding),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 14,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Color(0xffFB0000).withOpacity(0.17),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 60,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      'assets/img-info.png',
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                    color: kWhiteColor,
+                                    borderRadius: BorderRadius.circular(12)),
+                                child: Text(
+                                  'Informasi\nMakanan',
+                                  style: blackTextStyle.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

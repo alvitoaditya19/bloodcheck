@@ -11,12 +11,11 @@ List<DataInfoGulaModel> dataInfoGula = [
       'Tempe',
       'Tahu',
       'Kacang Hijau',
-      'Kacang Merah'
     ],
     data3: 'Sayuran dan Buah-buahan',
-    data4: '<72.0',
+    data4: '<70 mg/dl',
     subData3: ['Ketimun', 'Labu Siam', 'Tomat', 'Wortel', 'Bayam'],
-    subData4: ['Pepaya', 'Jeruk', 'Salak', 'Melon', 'Bengkoang', 'Apel'],
+    subData4: ['Pepaya', 'Jeruk', 'Salak', 'Melon', 'Bengkoang'],
   ),
   DataInfoGulaModel(
     data1: 'Gula Darah Tinggi',
@@ -31,8 +30,8 @@ List<DataInfoGulaModel> dataInfoGula = [
      ''
     ],
     data3: 'Sayuran dan Buah-buahan',
-    data4: '≥126.0~<140',
+    data4: ' ≥126-200 mg/dl',
     subData3: ['Selada', 'Kubis', 'Sawi', 'Kangkung', 'Mentimun'],
-    subData4: ['Alpukat', 'Jambu Biji', 'Jeruk Bali', 'Troberi', 'Raspberry'],
+    subData4: ['Alpukat', 'Jambu Biji', 'Jeruk Bali', 'Stroberi', 'Raspberry'],
   ),
 ];

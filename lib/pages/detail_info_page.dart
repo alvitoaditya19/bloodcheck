@@ -10,14 +10,7 @@ class DetailInfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBlueColor,
-      appBar: AppBar(
-        backgroundColor: kBlueColor,
-        title: Text(
-          'Detail Page',
-          style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
-        ),
-      ),
+      backgroundColor: kWhiteColor,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -29,26 +22,26 @@ class DetailInfoPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/img-bg-info.png'),
+                    image: AssetImage('assets/img-detail-vege.png'),
                   ),
                 ),
               ),
               Text(
                 data.data1,
                 style:
-                    whiteTextStyle.copyWith(fontSize: 30, fontWeight: semiBold),
+                    blackTextStyle.copyWith(fontSize: 30, fontWeight: semiBold),
               ),
               Text(
                 data.data4,
                 style:
-                    whiteTextStyle.copyWith(fontSize: 30, fontWeight: semiBold),
+                    blackTextStyle.copyWith(fontSize: 30, fontWeight: semiBold),
               ),
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(vertical: 16),
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                    color: kWhiteColor,
+                    color: Color(0xffF008F4).withOpacity(0.22),
                     borderRadius: BorderRadius.circular(16)),
                 child: Center(
                   child: Text(
@@ -66,7 +59,7 @@ class DetailInfoPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                  color: kWhiteColor,
+                  color: Color(0xffF40808).withOpacity(0.22),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Row(
@@ -142,7 +135,7 @@ class DetailInfoPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 16),
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                    color: kWhiteColor,
+                    color: Color(0xffFF9C07).withOpacity(0.22),
                     borderRadius: BorderRadius.circular(16)),
                 child: Center(
                   child: Text(
@@ -160,7 +153,7 @@ class DetailInfoPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
-                  color: kWhiteColor,
+                  color: Color(0xff2356D8).withOpacity(0.18),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Row(
