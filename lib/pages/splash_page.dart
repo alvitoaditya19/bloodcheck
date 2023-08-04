@@ -18,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double padding = 115;
+
     return Scaffold(
       backgroundColor: kWhiteColor,
       body: SingleChildScrollView(
@@ -90,50 +90,48 @@ class _SplashPageState extends State<SplashPage> {
                       onTap: () {
                         context.read<PageBloc>().add(GoToRecentPage());
                       },
-                      child: Expanded(
-                        child: Container(
-                          width: screenWidth - (2 * padding),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 14,
-                            vertical: 14,
-                          ),
-                          decoration: BoxDecoration(
-                              color: Color(0xffC1C1C1),
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 60,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      'assets/img-health.png',
-                                    ),
+                      child: Container(
+                        width: 130,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 14,
+                        ),
+                        decoration: BoxDecoration(
+                            color: Color(0xffC1C1C1),
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 60,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    'assets/img-health.png',
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 40,
-                              ),
-                              Container(
-                                padding: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                    color: kWhiteColor,
-                                    borderRadius: BorderRadius.circular(12)),
-                                child: Text(
-                                  'Nilai\nStandar',
-                                  style: blackTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                  textAlign: TextAlign.center,
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                  color: kWhiteColor,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: Text(
+                                'Nilai\nStandar',
+                                style: blackTextStyle.copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
@@ -141,50 +139,48 @@ class _SplashPageState extends State<SplashPage> {
                       onTap: () {
                         context.read<PageBloc>().add(GoToInformasiPage());
                       },
-                      child: Expanded(
-                        child: Container(
-                          width: screenWidth - (2 * padding),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 14,
-                            vertical: 14,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xffFB0000).withOpacity(0.17),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 60,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      'assets/img-info.png',
-                                    ),
+                      child: Container(
+                        width: 130,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 14,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Color(0xffFB0000).withOpacity(0.17),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 60,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    'assets/img-info.png',
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 40,
-                              ),
-                              Container(
-                                padding: EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                    color: kWhiteColor,
-                                    borderRadius: BorderRadius.circular(12)),
-                                child: Text(
-                                  'Informasi\nMakanan',
-                                  style: blackTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                  color: kWhiteColor,
+                                  borderRadius: BorderRadius.circular(12)),
+                              child: Text(
+                                'Informasi\nMakanan',
+                                style: blackTextStyle.copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
